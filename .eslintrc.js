@@ -3,14 +3,12 @@ module.exports = {
     'browser': true,
     'commonjs': true,
     'es2021': true,
-    'node': true
+    'node': true,
+    'cypress/globals': true,
   },
   'extends': 'eslint:recommended',
   'overrides': [
     {
-      'env': {
-        'node': true
-      },
       'files': [
         '.eslintrc.{js,cjs}'
       ],
@@ -22,6 +20,9 @@ module.exports = {
   'parserOptions': {
     'ecmaVersion': 'latest'
   },
+  'plugins': [
+    'cypress'
+  ],
   'rules': {
     'indent': [
       'error',
@@ -48,5 +49,5 @@ module.exports = {
       'error', { 'before': true, 'after': true }
     ],
     'no-console': 0,
-  }
+  },
 }

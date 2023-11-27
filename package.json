@@ -11,7 +11,9 @@
     "deploy": "/home/akseli/.fly/bin/flyctl deploy",
     "deploy:full": "npm run build:ui && npm run deploy",
     "logs:prod": "/home/akseli/.fly/bin/flyctl logs",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "cypress:open": "cypress open",
+    "test:e2e": "cypress run"
   },
   "author": "Akseli Harkki",
   "license": "MIT",
@@ -24,7 +26,9 @@
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.4.10",
+    "cypress": "^13.6.0",
     "eslint": "^8.51.0",
+    "eslint-plugin-cypress": "^2.15.1",
     "nodemon": "^3.0.1"
   }
 }
