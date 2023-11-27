@@ -3,7 +3,8 @@ const app = express()
 const dotenv = require('dotenv')
 dotenv.config({ path:'.env' })
 const morgan = require('morgan')
-morgan.token('person', (req, res) => {
+// eslint-disable-next-line no-unused-vars
+morgan.token('person', (req, _res) => {
   if(req.method === 'POST') {
     return JSON.stringify(req.body)
   }
@@ -47,9 +48,7 @@ app.get('/info', (req, res) => {
 
 app.delete('/api/persons/:id', (req, res, next) => {
   Person.findByIdAndRemove(req.params.id)
-    .then(result => {
-      res.status(204).end()
-    })
+    .then(res.status(204).end())
     .catch(error => next(error))
 })
 

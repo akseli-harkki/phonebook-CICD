@@ -6,9 +6,9 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:ui": "rm -rf dist && cd ../frontend/ && npm run build && cp -r dist ../backend",
-    "deploy": "/home/akseli/.fly/bin/flyctl   deploy",
+    "test": "cd frontend && npm run test",
+    "build:ui": "rm -rf dist && cd frontend/ && npm run build && cp -r dist ..",
+    "deploy": "/home/akseli/.fly/bin/flyctl deploy",
     "deploy:full": "npm run build:ui && npm run deploy",
     "logs:prod": "/home/akseli/.fly/bin/flyctl logs",
     "lint": "eslint ."
