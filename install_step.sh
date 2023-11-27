@@ -1,9 +1,9 @@
 #!/bin/bash
 
-echo "Install script"
+echo "Lint script"
 
-npm install
+npm run lint
 
 cd frontend
 
-npm install
+npm run lint

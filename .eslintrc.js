@@ -5,8 +5,12 @@ module.exports = {
     'es2021': true,
     'node': true,
     'cypress/globals': true,
+    'jest': true
   },
-  'extends': 'eslint:recommended',
+  'extends': [
+    'eslint:recommended',
+    'plugin:react/recommended'
+  ],
   'overrides': [
     {
       'files': [
@@ -21,9 +25,11 @@ module.exports = {
     'ecmaVersion': 'latest'
   },
   'plugins': [
-    'cypress'
+    'cypress', 'react'
   ],
   'rules': {
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
     'indent': [
       'error',
       2
