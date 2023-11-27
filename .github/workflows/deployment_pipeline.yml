@@ -34,6 +34,7 @@ jobs:
           start: npm run start
           wait-on: http://localhost:3001
   deploy:
+    needs: [simple_deployment_pipeline]
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
