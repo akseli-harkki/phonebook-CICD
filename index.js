@@ -97,6 +97,14 @@ const errorHandler = (error, request, response, next) => {
 
 app.use(errorHandler)
 
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
+
+app.get('/version', (req, res) => {
+  res.send('0.0.0') // change this string to ensure a new version deployed
+})
+
 const PORT = process.env.PORT
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
